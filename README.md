@@ -73,4 +73,4 @@ If you find our work useful, please consider citing:
 
 ## Acknowledgments
 
-This research was conducted at the [HiRO Lab](https://hiro.cps.iisc.ac.in/) and [FoCAS Lab](https://www.focaslab.com/) at the Cyber Physical Systems department, Indian Institute of Science (IISc). The website template is lightly adapted from Nerfies.
+This research was conducted at the [FoCAS Lab](https://www.focaslab.com/) and [HiRO Lab](https://hiro.cps.iisc.ac.in/)at the Cyber Physical Systems department, Indian Institute of Science (IISc). The website template is lightly adapted from Nerfies.
