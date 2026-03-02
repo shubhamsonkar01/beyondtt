@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond the Teacher — Project Page</title>
+
+  <!-- SEO Meta -->
+  <meta name="description"
+    content="Project page for Beyond the Teacher: Leveraging Mixed-Skill Demonstrations for Robust Imitation Learning. Published at ICRA 2026.">
+  <meta name="keywords"
+    content="imitation learning, robot learning, dynamic movement primitives, LSTM, demonstration learning, Franka robot">
+  <meta name="author" content="S. Saharsh, Shubham Sonkar, Pushpak Jagtap, Ravi Prakash">
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+    content="Beyond the Teacher: Leveraging Mixed-Skill Demonstrations for Robust Imitation Learning">
+  <meta property="og:description"
+    content="A novel IL pipeline that enables expert-like robotic task execution from naive demonstrations using Periodic DMPs and LSTM-based trajectory refinement.">
+  <meta property="og:type" content="website">
+  <!-- <meta property="og:image" content="static/images/og-image.png"> -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Google+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Academicons for arXiv, Google Scholar etc. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-content">
+      <a href="#" class="nav-logo">📄 Beyond the Teacher</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <!-- Conference badge -->
+      <div class="publication-badge">
+        <span class="badge">ICRA 2026</span>
+      </div>
+
+      <h1 class="paper-title">
+        Beyond the Teacher: Leveraging Mixed-Skill<br>
+        Demonstrations for Robust Imitation Learning
+      </h1>
+
+      <!-- Authors -->
+      <div class="authors">
+        <span class="author">
+          <a href="https://scholar.google.com/citations?user=lkb7bRMAAAAJ&hl=en&authuser=1" target="_blank">S.
+            Saharsh</a><sup>*</sup>
+        </span>
+        <span class="author">
+          <a href="https://scholar.google.is/citations?hl=en&user=dzrN4ngAAAAJ" target="_blank">Shubham
+            Sonkar</a><sup>*</sup>
+        </span>
+        <span class="author">
+          <a href="https://scholar.google.co.in/citations?user=Szd98jUAAAAJ&hl=en" target="_blank">Pushpak Jagtap</a>
+        </span>
+        <span class="author">
+          <a href="https://scholar.google.com/citations?hl=en&user=mV2CW4QAAAAJ" target="_blank">Ravi Prakash</a>
+        </span>
+      </div>
+      <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;"><sup>*</sup> Equal contribution</p>
+
+      <!-- Affiliations -->
+      <div class="affiliations">
+        <span class="affiliation">Cyber Physical Systems, Indian Institute of Science (IISc), Bengaluru, India</span>
+      </div>
+
+      <!-- Institution & Lab Logos -->
+      <div
+        style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-top: 1.2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <a href="https://www.focaslab.com/" target="_blank" style="text-decoration: none;">
+          <img src="focaslab.png" alt="FoCAS Lab" style="height: 70px; object-fit: contain;">
+        </a>
+        <a href="https://hiro.cps.iisc.ac.in/" target="_blank" style="text-decoration: none;">
+          <img src="hiro_lab.jpg" alt="HiRO Lab" style="height: 70px; object-fit: contain;">
+        </a>
+        <a href="https://cps.iisc.ac.in/" target="_blank" style="text-decoration: none;">
+          <img src="cps.png" alt="CPS" style="height: 70px; object-fit: contain;">
+        </a>
+        <a href="https://iisc.ac.in/" target="_blank" style="text-decoration: none;">
+          <img src="iisc.jpg" alt="IISc" style="height: 70px; object-fit: contain;">
+        </a>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="action-buttons">
+        <a href="#" class="btn btn-paper" title="PDF coming soon — accepted at ICRA 2026"
+          style="opacity: 0.5; cursor: default;" onclick="return false;">
+          <i class="fas fa-file-pdf"></i>
+          <span>Paper (Soon)</span>
+        </a>
+
+        <a href="https://youtu.be/sEGpXu0vF7Q" class="btn btn-video" title="Watch Video" target="_blank">
+          <i class="fab fa-youtube"></i>
+          <span>Video</span>
+        </a>
+        <a href="https://github.com/FocasLab/ICRA-IL-2026" class="btn btn-code" title="View Code" target="_blank">
+          <i class="fab fa-github"></i>
+          <span>Code</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEASER ============ -->
+  <section class="teaser" id="teaser">
+    <div class="container">
+      <div class="teaser-video-wrapper">
+        <img src="poster.png" alt="Novel IL pipeline for imitation learning with expert-like behavior"
+          style="width: 100%; border-radius: 12px;">
+      </div>
+      <p class="teaser-caption">
+        <strong>Figure 1.</strong> Novel IL pipeline for imitation learning with expert-like behavior using imperfect
+        demonstrations without human intervention. Results from standard IL methods are shown in red and from our
+        proposed pipeline are shown in green.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ABSTRACT ============ -->
+  <section class="section" id="abstract">
+    <div class="container">
+      <h2 class="section-title">Abstract</h2>
+      <div class="abstract-content">
+        <p>
+          Achieving expert-like robotic task execution in dynamic environments typically requires extensive,
+          high-quality
+          expert demonstrations, a significant bottleneck for real-world deployment. We present a novel learning
+          framework
+          that overcomes this data dependency, enabling robots to perform complex periodic tasks with expert-like
+          proficiency, even when learning from naive demonstrations.
+        </p>
+        <p>
+          Our two-stage pipeline first selects a representative demonstration based on user-defined information-aware
+          task intention scores. This single best demo is then used to extract a canonical motion shape via Periodic
+          Dynamic Movement Primitives (DMPs). Finally, a Long Short-Term Memory (LSTM) network refines the entire set
+          of demonstrations, leveraging a multi-objective score that combines the canonical shape with mutual
+          information
+          and other task quality metrics.
+        </p>
+        <p>
+          The proposed approach is demonstrated on a Franka Research 3 robot performing phasic tasks across three
+          contrasting domains: wiping in human assistive services, weaving in the textile industry, and pick-and-place
+          operations for warehouse automation. Code available at:
+          <a href="https://github.com/FocasLab/ICRA-IL-2026"
+            target="_blank">https://github.com/FocasLab/ICRA-IL-2026</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="section section-alt" id="method">
+    <div class="container">
+      <h2 class="section-title">Method</h2>
+      <div class="method-content">
+        <div class="method-figure">
+          <img src="chart.png" alt="Control flow diagram of the proposed approach"
+            style="width: 100%; border-radius: 12px;">
+          <p class="teaser-caption" style="margin-top: 0.5rem;"><strong>Figure 2.</strong> Control flow diagram of the
+            proposed approach showing the two-stage pipeline.</p>
+        </div>
+        <div class="method-description">
+          <h3>Demo Utility Score</h3>
+          <p>
+            We employ a multi-objective scoring mechanism derived from task-intentional prompts (Do's and Don'ts of
+            the task). The <strong>Demo Utility Score</strong> U(x<sub>i</sub>) quantifies the quality of each raw
+            demonstration based on mutual information between states and actions, as well as kinematic and geometric
+            characteristics including symmetry, closure, and smoothness losses.
+          </p>
+          <h3>Canonical Motion Extraction with Periodic DMP</h3>
+          <p>
+            The expert-like trajectory is selected using the demo utility score, and Periodic Dynamic Movement
+            Primitives (DMPs) generate a canonical reference for the desired motion. Rollouts from the learned
+            Periodic DMP estimate a state visitation value map over the task space using kernel density estimation
+            (KDE).
+          </p>
+          <h3>Refinement with LSTM</h3>
+          <p>
+            A Long Short-Term Memory (LSTM) network refines the entire set of demonstrations by learning
+            trajectory corrections. The LSTM leverages the multi-objective score combining the canonical shape
+            with mutual information and task quality metrics to produce expert-like trajectories from imperfect
+            demonstrations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="section" id="results">
+    <div class="container">
+      <h2 class="section-title">Results</h2>
+
+      <p style="max-width: 800px; margin: 0 auto 2rem; text-align: center; color: #555;">
+        Our approach achieves expert-like robotic performance on complex periodic tasks, even when trained on as few as
+        four demonstrations.
+        Results are demonstrated across three contrasting domains on a Franka Research 3 robot.
+      </p>
+
+      <!-- ========== SECTION 1: Noisy vs Cleaned Demonstrations ========== -->
+      <h3 class="subsection-title">Noisy vs Cleaned Demonstrations</h3>
+      <p style="max-width: 800px; margin: 0 auto 1rem; text-align: center; color: #666; font-size: 0.95rem;">
+        Comparison of noisy raw demonstrations versus cleaned demonstrations produced by our two-stage pipeline
+        across three periodic task domains. Trajectory projection visualized in the XY plane.
+      </p>
+
+      <!-- 2D/3D Toggle for Demos -->
+      <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+        <div style="display: inline-flex; border-radius: 8px; overflow: hidden; border: 2px solid #6c5ce7;">
+          <button id="demoView2D" onclick="switchDemoView('2d')"
+            style="padding: 0.5rem 1.5rem; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; background: #6c5ce7; color: #fff;">
+            2D View
+          </button>
+          <button id="demoView3D" onclick="switchDemoView('3d')"
+            style="padding: 0.5rem 1.5rem; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; background: #fff; color: #6c5ce7;">
+            3D Interactive
+          </button>
+        </div>
+      </div>
+
+      <!-- Demo 2D View: Static images -->
+      <div id="demo2dContainer">
+        <div style="margin-bottom: 2rem;">
+          <!-- Noisy Row -->
+          <h4 style="text-align: center; color: #e74c3c; margin-bottom: 0.8rem; font-weight: 600;">
+            <i class="fas fa-times-circle" style="margin-right: 0.3rem;"></i> Raw Noisy Demonstrations
+          </h4>
+          <div class="results-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="result-card">
+              <img src="Noisy_trajectories_hh.png" alt="Noisy wiping trajectories"
+                style="width: 100%; border-radius: 8px;">
+              <p class="result-caption">Wiping Task (WP)</p>
+            </div>
+            <div class="result-card">
+              <img src="Noisy_trajectories_pnp.png" alt="Noisy pick-and-place trajectories"
+                style="width: 100%; border-radius: 8px;">
+              <p class="result-caption">Pick-and-Place Task (PnP)</p>
+            </div>
+            <div class="result-card">
+              <img src="Noisy_trajectories_weaving.png" alt="Noisy weaving trajectories"
+                style="width: 100%; border-radius: 8px;">
+              <p class="result-caption">Weaving Task (WV)</p>
+            </div>
+          </div>
+
+          <!-- Cleaned Row -->
+          <h4 style="text-align: center; color: #27ae60; margin-bottom: 0.8rem; font-weight: 600;">
+            <i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i> Cleaned Demonstrations (Ours)
+          </h4>
+          <div class="results-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+            <div class="result-card">
+              <img src="Cleaned_trajectories_hh.png" alt="Cleaned wiping trajectories"
+                style="width: 100%; border-radius: 8px;">
+              <p class="result-caption">Wiping Task (WP)</p>
+            </div>
+            <div class="result-card">
+              <img src="Cleaned_trajectories_pnp.png" alt="Cleaned pick-and-place trajectories"
+                style="width: 100%; border-radius: 8px;">
+              <p class="result-caption">Pick-and-Place Task (PnP)</p>
+            </div>
+            <div class="result-card">
+              <img src="Cleaned_trajectories_weaving.png" alt="Cleaned weaving trajectories"
+                style="width: 100%; border-radius: 8px;">
+              <p class="result-caption">Weaving Task (WV)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo 3D View: Interactive Plotly -->
+      <div id="demo3dContainer" style="display: none;">
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label style="font-weight: 600; font-size: 0.9rem;">Task:</label>
+            <select id="demoTaskSelect"
+              style="padding: 0.4rem 0.8rem; border-radius: 8px; border: 2px solid #ddd; font-size: 0.9rem; cursor: pointer;">
+              <option value="wiping">Wiping (WP)</option>
+              <option value="pnp">Pick-and-Place (PnP)</option>
+              <option value="weaving">Weaving (WV)</option>
+            </select>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: #888; margin-bottom: 0.5rem;">
+          Drag to rotate · Scroll to zoom · Click legend to toggle traces
+        </p>
+        <div id="demoPlot3d"
+          style="width: 100%; height: 550px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+
+      <!-- ========== SECTION 2: IL Model Rollouts ========== -->
+      <h3 class="subsection-title" style="margin-top: 3rem;">IL Model Rollouts</h3>
+      <p style="max-width: 800px; margin: 0 auto 1rem; text-align: center; color: #666; font-size: 0.95rem;">
+        Comparison of rollout trajectories from four imitation learning models trained on noisy and cleaned
+        demonstration data.
+      </p>
+
+      <!-- 2D/3D Toggle for Rollouts -->
+      <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+        <div style="display: inline-flex; border-radius: 8px; overflow: hidden; border: 2px solid #6c5ce7;">
+          <button id="rolloutView2D" onclick="switchRolloutView('2d')"
+            style="padding: 0.5rem 1.5rem; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; background: #6c5ce7; color: #fff;">
+            2D View
+          </button>
+          <button id="rolloutView3D" onclick="switchRolloutView('3d')"
+            style="padding: 0.5rem 1.5rem; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; background: #fff; color: #6c5ce7;">
+            3D Interactive
+          </button>
+        </div>
+      </div>
+
+      <!-- Rollout 2D View: Static images (Fig 8, 9, 10) -->
+      <div id="rollout2dContainer">
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label style="font-weight: 600; font-size: 0.9rem;">Task:</label>
+            <select id="rollout2dTaskSelect" onchange="switchRollout2dTask()"
+              style="padding: 0.4rem 0.8rem; border-radius: 8px; border: 2px solid #ddd; font-size: 0.9rem; cursor: pointer;">
+              <option value="wiping">Wiping (WP) — Fig. 8</option>
+              <option value="pnp">Pick-and-Place (PnP) — Fig. 9</option>
+              <option value="weaving">Weaving (WV) — Fig. 10</option>
+            </select>
+          </div>
+        </div>
+        <div id="rollout2dWiping" class="rollout-2d-panel">
+          <h4 style="text-align: center; color: #e74c3c; margin-bottom: 0.5rem; font-weight: 600;">Trained on Noisy Data
+          </h4>
+          <div class="results-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-bottom: 1rem;">
+            <div class="result-card"><img src="fig8/rollout_plot_bc-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">BC</p>
+            </div>
+            <div class="result-card"><img src="fig8/rollout_plot_traj-bc-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Traj-BC</p>
+            </div>
+            <div class="result-card"><img src="fig8/rollout_plot_ileed-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">ILEED</p>
+            </div>
+            <div class="result-card"><img src="fig8/rollout_plot_neural-ode-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Neural-ODE</p>
+            </div>
+          </div>
+          <h4 style="text-align: center; color: #27ae60; margin-bottom: 0.5rem; font-weight: 600;">Trained on Cleaned
+            Data</h4>
+          <div class="results-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.8rem;">
+            <div class="result-card"><img src="fig8/rollout_plot_bc-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">BC</p>
+            </div>
+            <div class="result-card"><img src="fig8/rollout_plot_traj-bc-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Traj-BC</p>
+            </div>
+            <div class="result-card"><img src="fig8/rollout_plot_ileed-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">ILEED</p>
+            </div>
+            <div class="result-card"><img src="fig8/rollout_plot_neural-ode-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Neural-ODE</p>
+            </div>
+          </div>
+        </div>
+        <div id="rollout2dPnp" class="rollout-2d-panel" style="display: none;">
+          <h4 style="text-align: center; color: #e74c3c; margin-bottom: 0.5rem; font-weight: 600;">Trained on Noisy Data
+          </h4>
+          <div class="results-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-bottom: 1rem;">
+            <div class="result-card"><img src="fig9/prollout_plot_bc-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">BC</p>
+            </div>
+            <div class="result-card"><img src="fig9/prollout_plot_traj-bc-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Traj-BC</p>
+            </div>
+            <div class="result-card"><img src="fig9/prollout_plot_ileed-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">ILEED</p>
+            </div>
+            <div class="result-card"><img src="fig9/prollout_plot_neural-ode-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Neural-ODE</p>
+            </div>
+          </div>
+          <h4 style="text-align: center; color: #27ae60; margin-bottom: 0.5rem; font-weight: 600;">Trained on Cleaned
+            Data</h4>
+          <div class="results-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.8rem;">
+            <div class="result-card"><img src="fig9/prollout_plot_bc-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">BC</p>
+            </div>
+            <div class="result-card"><img src="fig9/prollout_plot_traj-bc-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Traj-BC</p>
+            </div>
+            <div class="result-card"><img src="fig9/prollout_plot_ileed-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">ILEED</p>
+            </div>
+            <div class="result-card"><img src="fig9/prollout_plot_neural-ode-rollouts-cleaned.png.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Neural-ODE</p>
+            </div>
+          </div>
+        </div>
+        <div id="rollout2dWeaving" class="rollout-2d-panel" style="display: none;">
+          <h4 style="text-align: center; color: #e74c3c; margin-bottom: 0.5rem; font-weight: 600;">Trained on Noisy Data
+          </h4>
+          <div class="results-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-bottom: 1rem;">
+            <div class="result-card"><img src="fig10/wrollout_plot_bc-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">BC</p>
+            </div>
+            <div class="result-card"><img src="fig10/wrollout_plot_traj-bc-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Traj-BC</p>
+            </div>
+            <div class="result-card"><img src="fig10/wrollout_plot_ileed-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">ILEED</p>
+            </div>
+            <div class="result-card"><img src="fig10/wrollout_plot_neural-ode-rollouts-noisy.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Neural-ODE</p>
+            </div>
+          </div>
+          <h4 style="text-align: center; color: #27ae60; margin-bottom: 0.5rem; font-weight: 600;">Trained on Cleaned
+            Data</h4>
+          <div class="results-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.8rem;">
+            <div class="result-card"><img src="fig10/wrollout_plot_bc-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">BC</p>
+            </div>
+            <div class="result-card"><img src="fig10/wrollout_plot_traj-bc-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Traj-BC</p>
+            </div>
+            <div class="result-card"><img src="fig10/wrollout_plot_ileed-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">ILEED</p>
+            </div>
+            <div class="result-card"><img src="fig10/wrollout_plot_neural-ode-rollouts-cleaned.png"
+                style="width:100%;border-radius:6px;">
+              <p class="result-caption">Neural-ODE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rollout 3D View: Interactive Plotly -->
+      <div id="rollout3dContainer" style="display: none;">
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label style="font-weight: 600; font-size: 0.9rem;">Task:</label>
+            <select id="rolloutTaskSelect"
+              style="padding: 0.4rem 0.8rem; border-radius: 8px; border: 2px solid #ddd; font-size: 0.9rem; cursor: pointer;">
+              <option value="wiping">Wiping (WP)</option>
+              <option value="pnp">Pick-and-Place (PnP)</option>
+              <option value="weaving">Weaving (WV)</option>
+            </select>
+          </div>
+
+        </div>
+        <!-- Model toggles -->
+        <div style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <label style="font-size: 0.85rem; cursor: pointer;">
+            <input type="checkbox" class="model-toggle" value="bc" checked> <span style="color:#636EFA;">● BC</span>
+          </label>
+          <label style="font-size: 0.85rem; cursor: pointer;">
+            <input type="checkbox" class="model-toggle" value="trajbc" checked> <span style="color:#EF553B;">●
+              Traj-BC</span>
+          </label>
+          <label style="font-size: 0.85rem; cursor: pointer;">
+            <input type="checkbox" class="model-toggle" value="ileed" checked> <span style="color:#00CC96;">●
+              ILEED</span>
+          </label>
+          <label style="font-size: 0.85rem; cursor: pointer;">
+            <input type="checkbox" class="model-toggle" value="node" checked> <span style="color:#AB63FA;">●
+              Neural-ODE</span>
+          </label>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem;">
+            <label style="font-weight: 600; font-size: 0.85rem;">Data:</label>
+            <select id="rolloutDataType"
+              style="padding: 0.3rem 0.6rem; border-radius: 6px; border: 2px solid #ddd; font-size: 0.85rem;">
+              <option value="noisy">Trained on Noisy</option>
+              <option value="cleaned">Trained on Cleaned</option>
+            </select>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: #888; margin-bottom: 0.5rem;">
+          Drag to rotate · Scroll to zoom · Click legend to toggle models
+        </p>
+        <div id="rolloutPlot3d"
+          style="width: 100%; height: 550px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+      <!-- Result Videos -->
+      <h3 class="subsection-title">Video Results</h3>
+      <div class="video-grid">
+        <div class="video-card">
+          <a href="https://youtu.be/sEGpXu0vF7Q" target="_blank"
+            style="text-decoration: none; position: relative; display: block;">
+            <img src="https://img.youtube.com/vi/sEGpXu0vF7Q/maxresdefault.jpg" alt="Demo Video Thumbnail"
+              style="width: 100%; border-radius: 12px; display: block;">
+            <div
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-play" style="color: #fff; font-size: 1.5rem; margin-left: 3px;"></i>
+            </div>
+          </a>
+          <p class="result-caption">Full demonstration video showing results from standard IL methods (red) vs. our
+            proposed pipeline (green) across all three task domains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RELATED LINKS ============ -->
+  <section class="section section-alt" id="related">
+    <div class="container">
+      <h2 class="section-title">Related Links</h2>
+      <div class="related-content">
+        <p>
+          Our work builds upon and relates to several important directions in imitation learning:
+        </p>
+        <ul class="related-list">
+          <li>
+            <a href="https://arxiv.org/abs/2410.19693" target="_blank">MILES</a> — Making Imitation Learning Easy with
+            Self-Supervision, using self-generated data to mitigate poor demonstrations.
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2103.14823" target="_blank">CoIL</a> — Co-Imitation Learning without expert
+            demonstration, leveraging self-supervised exploration.
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2202.01288" target="_blank">ILEED</a> — Imitation Learning by Estimating
+            Expertise of Demonstrators, weighting demonstrations by estimated ability.
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2502.08623" target="_blank">Robot Data Curation with MI Estimators</a> —
+            Using mutual information estimators to measure state–action dependence for data quality.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BIBTEX ============ -->
+  <section class="section" id="bibtex">
+    <div class="container">
+      <h2 class="section-title">BibTeX</h2>
+      <div class="bibtex-wrapper">
+        <button class="copy-btn" id="copyBibtex" title="Copy to clipboard">
+          <i class="fas fa-copy"></i> Copy
+        </button>
+        <pre class="bibtex-code"><code id="bibtexCode">@inproceedings{saharshsonkar2026beyond,
+  author    = {S. Saharsh and Shubham Sonkar and Pushpak Jagtap and Ravi Prakash},
+  title     = {Beyond the Teacher: Leveraging Mixed-Skill Demonstrations for Robust Imitation Learning},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2026},
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        This website template is adapted from the
+        <a href="https://nerfies.github.io/" target="_blank">Nerfies</a> project page.
+      </p>
+      <p>
+        Licensed under
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+          Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // ---- Sticky navbar on scroll ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // ---- Copy BibTeX to clipboard ----
+    document.getElementById('copyBibtex').addEventListener('click', () => {
+      const bibtexText = document.getElementById('bibtexCode').textContent;
+      navigator.clipboard.writeText(bibtexText).then(() => {
+        const btn = document.getElementById('copyBibtex');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+
+    // ---- Smooth scroll for nav links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const offset = 70; // navbar height
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ---- Fade-in on scroll (Intersection Observer) ----
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section, .teaser').forEach(section => {
+      section.classList.add('fade-in');
+      observer.observe(section);
+    });
+  </script>
+
+  <!-- Plotly.js for 3D visualization -->
+  <script src="https://cdn.plot.ly/plotly-2.35.0.min.js" charset="utf-8"></script>
+  <script>
+    // ---- View Switching Functions ----
+    function switchDemoView(view) {
+      document.getElementById('demo2dContainer').style.display = view === '2d' ? 'block' : 'none';
+      document.getElementById('demo3dContainer').style.display = view === '3d' ? 'block' : 'none';
+      document.getElementById('demoView2D').style.background = view === '2d' ? '#6c5ce7' : '#fff';
+      document.getElementById('demoView2D').style.color = view === '2d' ? '#fff' : '#6c5ce7';
+      document.getElementById('demoView3D').style.background = view === '3d' ? '#6c5ce7' : '#fff';
+      document.getElementById('demoView3D').style.color = view === '3d' ? '#fff' : '#6c5ce7';
+      if (view === '3d') updateDemoPlot();
+    }
+
+    function switchRolloutView(view) {
+      document.getElementById('rollout2dContainer').style.display = view === '2d' ? 'block' : 'none';
+      document.getElementById('rollout3dContainer').style.display = view === '3d' ? 'block' : 'none';
+      document.getElementById('rolloutView2D').style.background = view === '2d' ? '#6c5ce7' : '#fff';
+      document.getElementById('rolloutView2D').style.color = view === '2d' ? '#fff' : '#6c5ce7';
+      document.getElementById('rolloutView3D').style.background = view === '3d' ? '#6c5ce7' : '#fff';
+      document.getElementById('rolloutView3D').style.color = view === '3d' ? '#fff' : '#6c5ce7';
+      if (view === '3d') updateRolloutPlot();
+    }
+
+    function switchRollout2dTask() {
+      const task = document.getElementById('rollout2dTaskSelect').value;
+      document.querySelectorAll('.rollout-2d-panel').forEach(p => p.style.display = 'none');
+      if (task === 'wiping') document.getElementById('rollout2dWiping').style.display = 'block';
+      if (task === 'pnp') document.getElementById('rollout2dPnp').style.display = 'block';
+      if (task === 'weaving') document.getElementById('rollout2dWeaving').style.display = 'block';
+    }
+
+    // ---- 3D Trajectory Data & Plotting ----
+    let trajData = null;
+    let rolloutData = null;
+    let rolloutLoading = false;
+
+    const NOISY_COLORS = ['#e74c3c', '#c0392b', '#e67e22', '#d35400'];
+    const CLEAN_COLORS = ['#2ecc71', '#27ae60', '#1abc9c', '#16a085'];
+    const MODEL_COLORS = { bc: '#636EFA', trajbc: '#EF553B', ileed: '#00CC96', node: '#AB63FA' };
+    const MODEL_NAMES = { bc: 'BC', trajbc: 'Traj-BC', ileed: 'ILEED', node: 'Neural-ODE' };
+    const TASK_KEYS = {
+      wiping: { noisy: 'wiping_noisy', cleaned: 'wiping_cleaned' },
+      pnp: { noisy: 'pnp_noisy', cleaned: 'pnp_cleaned' },
+      weaving: { noisy: 'weaving_noisy', cleaned: 'weaving_cleaned' },
+    };
+    const TASK_NAMES = { wiping: 'Wiping', pnp: 'Pick-and-Place', weaving: 'Weaving' };
+
+    function makeLayout(title, zTitle) {
+      return {
+        scene: {
+          xaxis: { title: 'X Position', gridcolor: '#eee' },
+          yaxis: { title: 'Y Position', gridcolor: '#eee' },
+          zaxis: { title: zTitle, gridcolor: '#eee' },
+          bgcolor: '#fafafa',
+          camera: { eye: { x: 1.5, y: 1.5, z: 0.8 } },
+        },
+        margin: { l: 0, r: 0, t: 40, b: 0 },
+        paper_bgcolor: '#fff',
+        legend: { x: 0.01, y: 0.99, bgcolor: 'rgba(255,255,255,0.8)', font: { size: 11 } },
+        title: { text: title, font: { size: 14 } },
+      };
+    }
+
+    // ---- Demo Plot (Z = Position Z only) ----
+    function updateDemoPlot() {
+      if (!trajData) return;
+      const task = document.getElementById('demoTaskSelect').value;
+      const traces = [];
+
+      ['noisy', 'cleaned'].forEach(type => {
+        const key = TASK_KEYS[task][type];
+        const demos = trajData[key];
+        if (!demos) return;
+        const isNoisy = type === 'noisy';
+        const colors = isNoisy ? NOISY_COLORS : CLEAN_COLORS;
+        demos.forEach((demo, i) => {
+          traces.push({
+            type: 'scatter3d', mode: 'lines',
+            x: demo.map(p => p[0]),
+            y: demo.map(p => p[1]),
+            z: demo.map(() => 0),
+            name: `${isNoisy ? 'Noisy' : 'Cleaned'} Demo ${i + 1}`,
+            line: { color: colors[i % colors.length], width: isNoisy ? 2 : 4, dash: isNoisy ? 'dot' : 'solid' },
+            opacity: isNoisy ? 0.6 : 0.95,
+            legendgroup: `${type}_${i}`,
+          });
+        });
+      });
+
+      const layout = makeLayout(`${TASK_NAMES[task]} — Noisy vs Cleaned Demonstrations`, 'Position Z');
+      document.getElementById('demoPlot3d').innerHTML = '';
+      Plotly.newPlot('demoPlot3d', traces, layout, { responsive: true });
+    }
+
+    // ---- Rollout Plot (Z = time or position) ----
+    function updateRolloutPlot() {
+      if (!rolloutData && !rolloutLoading) {
+        rolloutLoading = true;
+        document.getElementById('rolloutPlot3d').innerHTML = '<p style="text-align:center;padding:2rem;color:#888;">Loading rollout data...</p>';
+        fetch('rollout_data.json?t=' + Date.now())
+          .then(r => r.json())
+          .then(d => { rolloutData = d; rolloutLoading = false; updateRolloutPlot(); })
+          .catch(e => {
+            rolloutLoading = false;
+            document.getElementById('rolloutPlot3d').innerHTML = '<p style="text-align:center;color:red;">Error: ' + e.message + '</p>';
+          });
+        return;
+      }
+      if (!rolloutData) return;
+
+      const task = document.getElementById('rolloutTaskSelect').value;
+      const zMode = 'posz'; // Z = Position (flat XY plane projection)
+      const dataType = document.getElementById('rolloutDataType').value;
+      const models = [];
+      document.querySelectorAll('.model-toggle:checked').forEach(cb => models.push(cb.value));
+
+      const taskRollouts = rolloutData[task];
+      if (!taskRollouts) return;
+
+      const traces = [];
+      models.forEach(model => {
+        const key = `${model}_${dataType}`;
+        const rollouts = taskRollouts[key];
+        if (!rollouts) return;
+        rollouts.forEach((traj, i) => {
+          traces.push({
+            type: 'scatter3d', mode: 'lines',
+            x: traj.map(p => p[0]),
+            y: traj.map(p => p[1]),
+            z: zMode === 'time' ? traj.map((_, t) => t) : traj.map(() => 0),
+            name: i === 0 ? MODEL_NAMES[model] : undefined,
+            showlegend: i === 0,
+            line: { color: MODEL_COLORS[model], width: 2 },
+            opacity: 0.7,
+            legendgroup: model,
+          });
+        });
+      });
+
+      const zTitle = zMode === 'time' ? 'Time Step' : 'Position Z';
+      const layout = makeLayout(`${TASK_NAMES[task]} — Rollouts (${dataType === 'noisy' ? 'Trained on Noisy' : 'Trained on Cleaned'}) — XY Projection`, zTitle);
+
+      if (traces.length === 0) {
+        document.getElementById('rolloutPlot3d').innerHTML = '<p style="text-align:center;padding:2rem;color:#888;">No data available for this combination.</p>';
+      } else {
+        document.getElementById('rolloutPlot3d').innerHTML = '';
+        Plotly.newPlot('rolloutPlot3d', traces, layout, { responsive: true });
+      }
+    }
+
+    // ---- Load trajectory data ----
+    fetch('trajectory_data.json')
+      .then(r => r.json())
+      .then(d => { trajData = d; })
+      .catch(e => console.error('Error loading trajectory data:', e));
+
+    // ---- Event listeners ----
+    document.getElementById('demoTaskSelect').addEventListener('change', updateDemoPlot);
+    document.getElementById('rolloutTaskSelect').addEventListener('change', updateRolloutPlot);
+
+    document.getElementById('rolloutDataType').addEventListener('change', updateRolloutPlot);
+    document.querySelectorAll('.model-toggle').forEach(cb => cb.addEventListener('change', updateRolloutPlot));
+  </script>
+
+</body>
+
+</html>
