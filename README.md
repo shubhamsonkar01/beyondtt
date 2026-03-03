@@ -46,17 +46,6 @@ research-paper-website/
 └── README.md
 ```
 
-## Running the Website Locally
-
-To view the interactive 3D Plotly plots locally, you'll need to serve the directory using a local web server (opening the HTML file directly in the browser restricts loading local JSON files).
-
-1. Open your terminal in this repository.
-2. Run a simple Python HTTP server:
-   ```bash
-   python3 -m http.server 8080
-   ```
-3. Open `http://localhost:8080` in your web browser.
-
 ## BibTeX
 
 If you find our work useful, please consider citing:
@@ -74,3 +63,4 @@ If you find our work useful, please consider citing:
 ## Acknowledgments
 
 This research was conducted at the [FoCAS Lab](https://www.focaslab.com/) and [HiRO Lab](https://hiro.cps.iisc.ac.in/)at the Cyber Physical Systems department, Indian Institute of Science (IISc). The website template is lightly adapted from Nerfies.
+
